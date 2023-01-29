@@ -9,6 +9,9 @@ import sys
 import allure
 import pytest
 from base.driver import DriverClient
+import warnings
+
+warnings.filterwarnings("ignore",category=DeprecationWarning)
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
@@ -30,7 +33,7 @@ def pytest_runtest_makereport(item, call):
             raise Exception('设备进程 ID 变化，可能发生崩溃')
 
 
-def pytest_runtest_call(item):
+def pytest_runtest_call():
     # 每条用例代码执行之前，非用例执行之前
     allure.dynamic.description('用例开始时间:{}'.format(datetime.datetime.now()))
     Action = DriverClient().Action
@@ -98,7 +101,10 @@ class YamlTest(pytest.Item):
                     response = self.Action.__getattribute__(self.locator.get('method'))(yamldict(self.locator))
                 else:
                     response = self.Action.__getattribute__(self.locator.get('method'))()
-                self.assert_response(response, self.locator)
+                if not self.locator.get('is_not_exist'):
+                    self.assert_response(response, self.locator)
+                else:
+                    self.assert_no_response(response, self.locator)
             except Exception as E:
                 if is_displayed:
                     raise E
@@ -114,6 +120,12 @@ class YamlTest(pytest.Item):
     def assert_response(self, response, locator):
         if locator.get('assert_text'):
             assert locator['assert_text'] in response
+        elif locator.get('assert_element'):
+            assert response
+
+    def assert_no_response(self, response, locator):
+        if locator.get('assert_text'):
+            assert locator['assert_text'] not in response
         elif locator.get('assert_element'):
             assert response
 

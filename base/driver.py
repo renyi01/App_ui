@@ -27,7 +27,9 @@ class Singleton(object):
                             'deviceName': udid,
                             'noReset': True,
                             'platformName': 'Android',
-                            'platformVersion': '10.0',
+                            'platformVersion': '9',
+                            'newCommandTimeout': '3000',
+                            'waitForIdleTimeout': '100',
                             'udid': udid}
 
             driver = webdriver.Remote(host, desired_caps)

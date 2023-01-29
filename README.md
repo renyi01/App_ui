@@ -16,6 +16,7 @@ test_index:
     time: 查找该元素需要的时间，默认 5s （选填）
     index: 页面有多个id，class时，不为空则查找元素数组下标 （选填）
     is_displayed: 默认 True ，当为 False 时元素未找到也不会抛异常（选填）
+    is_not_exist: 默认 True ，配合 get_text 方法使用
 ```
 ```
  需要参数的 method

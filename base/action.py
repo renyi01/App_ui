@@ -10,7 +10,7 @@ from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-
+from selenium.common.exceptions import NoSuchElementException
 from utils import L
 
 
@@ -73,7 +73,7 @@ class ElementActions:
             'args': args,
             'includeStderr': includeStderr,
             'timeout': 5000
-            })
+        })
         return result['stdout']
 
     def get_app_pid(self):
@@ -93,7 +93,7 @@ class ElementActions:
         """
         self._send_key_event('KEYCODE_SEARCH')
 
-    def set_keycode_enter(self):
+    def set_keycode_enters(self):
         """ 回车键
         """
         self._send_key_event('KEYCODE_ENTER')
@@ -197,11 +197,6 @@ class ElementActions:
         scrolldict = {'direction': 'left', 'element': element.id}
         self.driver.execute_script('mobile: swipe', scrolldict)
 
-    def swipe(self, x1, y1, x2, y2, speed=1000):
-        self.driver.swipe(x1, y1, x2, y2, speed)
-        self.sleep(1)
-        L.i("[滑动给定的距离] ")
-
     def swip_down(self, count=1, method=None, speed=1000):
         """ 向下滑动,常用于下拉刷新
         :param count: 滑动次数
@@ -271,15 +266,36 @@ class ElementActions:
             self.sleep(2)
             L.i("[滑动]向右滑动 ")
 
+    def free_swipe(self, element, speed=500):
+        """
+        sx: 滑动起始点的横向位置, 范围(0-1)
+        ex: 滑动终止点的横向位置, 范围(0-1)
+        sy: 滑动起始点的纵向位置, 范围(0-1)
+        ey: 滑动终止点的纵向位置, 范围(0-1)
+        """
+        sx = element['element'][0]
+        ex = element['element'][1]
+        sy = element['element'][2]
+        ey = element['element'][3]
+        if len(element['element']) == 5:
+            for z in range(element['element'][4]):
+                L.i(f"开始第{z + 1}次自定义滑动")
+                time.sleep(2)
+                self.driver.swipe(sx * self.width, sy * self.height, ex * self.width, ey * self.height, speed)
+        else:
+            L.i("开始自定义滑动")
+            self.driver.swipe(sx * self.width, sy * self.height, ex * self.width, ey * self.height, speed)
+
     def is_element_displayed(self, locator, is_raise=False, element=True):
-        """ ：控件是否显示e
+        """ ：控件是否显示
         :param locator: 定位器
         :param is_raise: 是否抛异常
         :param element:
         :returns:
             true:  显示
-            false: 不显示
+            false: 不显示AA
         """
+
         try:
             return WebDriverWait(self.driver, 2).until(
                 lambda driver: self._get_element_by_type(driver, locator),
@@ -294,7 +310,12 @@ class ElementActions:
             else:
                 return False
 
-    # ======================= private ====================
+    def is_element_not_displayed(self, locator):
+        res = (WebDriverWait(self.driver, 2).until(
+            lambda driver: self._get_element_by_type(driver, locator, element_type=False, not_exist=True)))
+        print(res)
+
+        # ======================= private ====================
 
     def _find_element(self, locator, is_need_displayed=True):
         """ ：单个元素,如果有多个返回第一个
@@ -315,6 +336,25 @@ class ElementActions:
                 L.e("页面中未能找到 %s 元素" % locator)
                 raise Exception("页面中未能找到 [%s]" % locator.get('name'))
 
+    def _find_toast(self, locator, is_need_displayed=True):
+        """ ：
+        :param locator: 定位器
+        :param is_need_displayed: 是否需要定位的元素必须展示
+        :return:
+        :raises:NotFoundElementError
+        """
+
+        with allure.step("检查：'{0}'".format(locator.get('name'))):
+            try:
+                if is_need_displayed:
+                    return WebDriverWait(self.driver, locator['time']).until(
+                        lambda driver: self._get_element_by_xpath(driver), '查找元素'.format(locator.get('name')))
+
+            except Exception as e:
+                print(e)
+                L.e("页面中未能找到 %s 元素" % locator)
+                raise Exception("页面中未能找到 [%s]" % locator.get('name'))
+
     def _find_elements(self, locator):
         """ 查找多元素
         :param locator: 定位器
@@ -329,7 +369,7 @@ class ElementActions:
                 return []
 
     @staticmethod
-    def _get_element_by_type(driver, locator, element_type=True):
+    def _get_element_by_type(driver, locator, element_type=True, not_exist=False):
         """
         :param driver: driver session
         :param locator: 定位器
@@ -338,10 +378,20 @@ class ElementActions:
             false：多个元素
         :return: 单个元素 或 元素list
         """
-        element = locator['element']
-        ltype = locator['type']
+        if not_exist:
+            element = locator['element']
+            ltype = locator['type']
 
-        return driver.find_element(ltype, element) if element_type else driver.find_elements(ltype, element)
+            return driver.find_element(ltype, element) if element_type else driver.find_elements(ltype, element)
+        else:
+            element = locator['element']
+            ltype = locator['type']
+
+            print(driver.find_element(ltype, element) if element_type else driver.find_elements(ltype, element))
+
+    @staticmethod
+    def _get_element_by_xpath(driver):
+        return driver.find_element_by_xpath('//*[@class="android.widget.Toast"]')
 
     def _send_key_event(self, arg, num=0):
         """

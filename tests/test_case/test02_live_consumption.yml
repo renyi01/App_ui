@@ -2,6 +2,9 @@ test_live_consumption:
   -
     method: launchApp # 重启 APP
   -
+    method: sleep
+    element: 5
+  -
     method: click
     element: cn.missevan:id/tv_tab_title
     index: 0
