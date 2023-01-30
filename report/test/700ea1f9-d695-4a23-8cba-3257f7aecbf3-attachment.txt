@@ -1,0 +1,11 @@
+<appium.webdriver.webelement.WebElement (session="d12fbd16-c4ab-44cf-86ea-4193c1b021c9", element="28d7d94e-0414-4a01-b4f6-7f15803713dc")>
+<appium.webdriver.webelement.WebElement (session="d12fbd16-c4ab-44cf-86ea-4193c1b021c9", element="afc99c55-979e-4ea5-ae44-86854f9b1724")>
+<appium.webdriver.webelement.WebElement (session="d12fbd16-c4ab-44cf-86ea-4193c1b021c9", element="91e9b1f8-4680-40af-81c6-f87f1f8694d5")>
+<appium.webdriver.webelement.WebElement (session="d12fbd16-c4ab-44cf-86ea-4193c1b021c9", element="996ffe8c-127b-4686-b05e-ffd47609f3e9")>
+<appium.webdriver.webelement.WebElement (session="d12fbd16-c4ab-44cf-86ea-4193c1b021c9", element="e9f0f56b-28ac-49ea-abcb-75f904dec796")>
+<appium.webdriver.webelement.WebElement (session="d12fbd16-c4ab-44cf-86ea-4193c1b021c9", element="f6f71a57-b99e-42f0-bf58-39c041b29bea")>
+<appium.webdriver.webelement.WebElement (session="d12fbd16-c4ab-44cf-86ea-4193c1b021c9", element="3522aa62-2c48-40a2-9e54-d9807de71810")>
+<appium.webdriver.webelement.WebElement (session="d12fbd16-c4ab-44cf-86ea-4193c1b021c9", element="fc91040a-2a55-41aa-a958-32028c831405")>
+Message: 查找元素
+
+2022-09-07 18:05:36 [Error]:页面中未能找到 {'method': 'click', 'element': 'cn.missevan:id/nav_icon_mine', 'name': '打开我的页', 'time': 5, 'type': 'id'} 元素

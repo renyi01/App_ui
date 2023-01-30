@@ -1,0 +1,62 @@
+test24_live_square:
+  -
+    method: free_swipe
+    element:
+      - 0.9
+      - 0.1
+      - 0.45
+      - 0.45
+  -
+    method: _find_element
+    element: cn.missevan:id/live_cover
+  -
+    method: click
+    element: cn.missevan:id/ll_content
+    index: 0
+  -
+    method: _find_element
+    element: cn.missevan:id/live_cover
+  -
+    method: click
+    element: cn.missevan:id/ll_content
+    index: 2
+  -
+    method: _find_element
+    element: cn.missevan:id/live_cover
+  -
+    method: click
+    element: cn.missevan:id/live_rank
+    name: 进入主播榜
+  -
+    method: swip_left
+  -
+    method: _find_element
+    element: cn.missevan:id/bg_live_level1
+  -
+    method: swip_left
+  -
+    method: _find_element
+    element: cn.missevan:id/bg_live_level1
+  -
+    method: swip_left
+  -
+    method: _find_element
+    element: cn.missevan:id/bg_live_level1
+  -
+    method: swip_left
+  -
+    method: _find_element
+    element: cn.missevan:id/bg_live_level1
+  -
+    method: back_press
+  -
+    method: click
+    element: cn.missevan:id/img_status
+  -
+    method: click
+    element: cn.missevan:id/txt_live_center
+    name: 进入直播中心
+  -
+    method: _find_element
+    element: cn.missevan:id/img_level_bg
+    name: 检查登录状态

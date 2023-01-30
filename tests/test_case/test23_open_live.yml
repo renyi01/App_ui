@@ -1,0 +1,67 @@
+test23_open_live:
+  #测试直播间相关功能需要登录账号：18651086262 / 123456
+  -
+    method: free_swipe
+    element:
+      - 0.1
+      - 0.9
+      - 0.5
+      - 0.5
+  -
+    method: click
+    element: cn.missevan:id/img_status
+  -
+    method: click
+    element: cn.missevan:id/txt_live_start
+  -
+    method: set_text
+    element: cn.missevan:id/et_room_name
+    text: //一个测试直播间//
+  -
+    method: set_text
+    element: cn.missevan:id/et_room_intro
+    text: //测试简介//测试简介//
+  -
+    method: click
+    element: cn.missevan:id/tvChooseCategory
+  -
+    method: click
+    element: cn.missevan:id/tvCategory
+    index: 0
+    name: 选择分区
+  -
+    method: click
+    element: cn.missevan:id/tvConfirm
+  -
+    method: click
+    element: cn.missevan:id/notify
+  -
+    method: click
+    element: cn.missevan:id/tv_start_live
+    name: 确认开播
+  -
+    method: click_shoot_windows
+  -
+    method: sleep
+    element: 3
+  -
+    method: _find_element
+    element: cn.missevan:id/live_state
+    name: 检查开播状态
+  -
+    method: click
+    element: cn.missevan:id/close_icon
+  -
+    method: click
+    element: cn.missevan:id/confirm
+  -
+    method: _find_element
+    element: cn.missevan:id/live_time
+    name: 检查关播页
+  -
+    method: click
+    element: cn.missevan:id/close
+  -
+    method: _find_element
+    element: cn.missevan:id/fl_search
+    name: 检查首页

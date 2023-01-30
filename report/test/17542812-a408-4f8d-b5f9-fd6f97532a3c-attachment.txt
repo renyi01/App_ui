@@ -1,0 +1,3 @@
+<appium.webdriver.webelement.WebElement (session="75b53075-41f7-4a33-8e5f-f4ad8cec1497", element="ac14aa4c-01a9-4b1f-97bd-ed05427688a4")>
+<appium.webdriver.webelement.WebElement (session="75b53075-41f7-4a33-8e5f-f4ad8cec1497", element="6bb68eb6-2b0f-4050-9f48-52b6321d32b2")>
+<appium.webdriver.webelement.WebElement (session="75b53075-41f7-4a33-8e5f-f4ad8cec1497", element="f3d8cff8-866a-4f42-b726-fa8e696c7adb")>

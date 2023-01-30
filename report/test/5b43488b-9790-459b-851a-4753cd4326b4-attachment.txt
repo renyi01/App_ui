@@ -1,0 +1,10 @@
+<appium.webdriver.webelement.WebElement (session="0414f6dd-c575-4ddf-99fa-31c7c02f9fea", element="c5f99999-d029-4ee5-b54d-66bc0330f069")>
+<appium.webdriver.webelement.WebElement (session="0414f6dd-c575-4ddf-99fa-31c7c02f9fea", element="49576cd8-6c9e-453e-b924-1c3c5e171670")>
+<appium.webdriver.webelement.WebElement (session="0414f6dd-c575-4ddf-99fa-31c7c02f9fea", element="31ceeabb-c3ce-4db7-a83d-759774ff227f")>
+<appium.webdriver.webelement.WebElement (session="0414f6dd-c575-4ddf-99fa-31c7c02f9fea", element="18715e57-bdb1-47d8-834e-fd52f5beb1ea")>
+<appium.webdriver.webelement.WebElement (session="0414f6dd-c575-4ddf-99fa-31c7c02f9fea", element="8b8f7999-681e-4349-9c9b-d4eb0f2ab0db")>
+<appium.webdriver.webelement.WebElement (session="0414f6dd-c575-4ddf-99fa-31c7c02f9fea", element="f3442b36-9914-481e-885b-3c7401cb5ec0")>
+<appium.webdriver.webelement.WebElement (session="0414f6dd-c575-4ddf-99fa-31c7c02f9fea", element="8efb8066-ab45-47f7-a34a-30a1e08e63b0")>
+Message: 查找元素
+
+2022-09-07 18:18:34 [Error]:页面中未能找到 {'method': 'click', 'element': 'cn.missevan:id/nav_icon_mine', 'name': '打开我的页', 'time': 5, 'type': 'id'} 元素

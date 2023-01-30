@@ -1,0 +1,119 @@
+test25_my_page:
+  -
+    method: click
+    element: cn.missevan:id/nav_icon_mine
+    name: 打开我的页
+#  -
+#    method: click
+#    element: cn.missevan:id/textView5
+#  -
+#    method: set_text
+#    element: cn.missevan:id/etPhoneNum
+#    text: 13605169493
+#  -
+#    method: click
+#    element: cn.missevan:id/getCode
+#  -
+#    method: get_text
+#    element: cn.missevan:id/getCode
+#    assert_text: 获取验证码
+#    is_not_exist: True
+#  -
+#    method: click
+#    element: cn.missevan:id/passwordLogin
+#  -
+#    method: set_text
+#    element: cn.missevan:id/etPhoneNum
+#    text: 15000332423
+#  -
+#    method: set_text
+#    element: cn.missevan:id/etPassword
+#    text: 123456
+#  -
+#    method: click
+#    element: cn.missevan:id/privacy_checked
+#  -
+#    method: click
+#    element: cn.missevan:id/login
+  # 不要多次用同一个号进行登录测试，会触发滑动验证
+#  -
+#    method: _find_element
+#    element: cn.missevan:id/new_personal_yugan
+#  -
+#    method: click
+#    element: cn.missevan:id/iv_settings
+#  -
+#    method: swip_up
+#  -
+#    method: click
+#    element: cn.missevan:id/logout
+#  -
+#    method: click
+#    element: cn.missevan:id/tv_sure
+#  -
+#    method: get_text
+#    element: cn.missevan:id/textView5
+#    assert_text: 点击登录
+#  -
+#    method: click
+#    element: cn.missevan:id/textView5
+#  -
+#    method: click
+#    element: cn.missevan:id/passwordLogin
+#  -
+#    method: click
+#    element: cn.missevan:id/tvAccountType
+#  -
+#    method: set_text
+#    element: cn.missevan:id/etEmail
+#    text: miss2@mail.bccto.me
+#  -
+#    method: set_text
+#    element: cn.missevan:id/etPassword
+#    text: 123456
+#  -
+#    method: click
+#    element: cn.missevan:id/login
+#  -
+#    method: _find_element
+#    element: cn.missevan:id/new_personal_username
+  -
+    method: click
+    element: cn.missevan:id/new_personal_already_bought
+  -
+    method: _find_element
+    element: cn.missevan:id/drama_title
+  -
+    method: back_press
+  -
+    method: click
+    element: cn.missevan:id/new_personal_sounds
+  -
+    method: _find_element
+    element: cn.missevan:id/tv_title
+  -
+    method: back_press
+  -
+    method: click
+    element: cn.missevan:id/new_personal_my_follow
+  -
+    method: _find_element
+    element: cn.missevan:id/follow_title
+  -
+    method: swip_left
+  -
+    method: _find_element
+    element: android.widget.LinearLayout
+    index: 0
+  -
+    method: back_press
+  -
+    method: click
+    element: android.widget.RelativeLayout
+    index: 0
+  -
+    method: click
+    element: cn.missevan:id/start_sound_control
+  -
+    method: _find_element
+    element: cn.missevan:id/ll_container

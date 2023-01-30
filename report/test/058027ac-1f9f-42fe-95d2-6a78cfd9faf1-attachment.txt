@@ -1,0 +1,8 @@
+2022-08-30 11:50:40 [Info]:开始自定义滑动
+Message: 查找元素
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\任\AppData\Local\Programs\Appium\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:75:11)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:85:5)
+2022-08-30 11:50:47 [Error]:页面中未能找到 {'method': '_find_element', 'element': 'cn.missevan:id/live_cover', 'time': 5, 'type': 'id'} 元素

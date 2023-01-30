@@ -1,0 +1,12 @@
+2022-08-30 11:53:10 [Info]:[输入]元素 13605169493 
+2022-08-30 11:53:12 [Info]:[获取]元素 None 
+2022-08-30 11:53:15 [Info]:[输入]元素 15000332423 
+2022-08-30 11:53:17 [Info]:[输入]元素 123456 
+2022-08-30 11:53:26 [Info]:[滑动]向上刷新 
+2022-08-30 11:53:27 [Info]:[获取]元素 None 
+Message: 查找元素
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\任\AppData\Local\Programs\Appium\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:75:11)
+    at processTicksAndRejections (internal/process/task_queues.js:85:5)
+2022-08-30 11:53:35 [Error]:页面中未能找到 {'method': 'click', 'element': '邮箱账号登录', 'time': 5, 'type': 'accessibility id'} 元素

@@ -1,0 +1,210 @@
+test22_live_basic:
+  #测试直 播间相关功能需要登录账号：18651086262 / 123456
+  #同时保证 uat 直播间 425787371 在开播状态
+  -
+    method: free_swipe
+    element:
+      - 0.1
+      - 0.9
+      - 0.5
+      - 0.5
+  -
+    method: click
+    element: cn.missevan:id/ll_content
+    index: 0
+    name: 点击关注tab
+  -
+    method: click
+    element: cn.missevan:id/live_cover
+    name: 进入直播间
+  -
+    method: sleep
+    element: 3
+  -
+    method: click
+    element: cn.missevan:id/show_edit
+    name: 点击输入框
+  -
+    method: set_text
+    element: cn.missevan:id/danmu_edit
+    text: 测试消息发送
+  -
+    method: set_keycode_enters
+  -
+    method: set_keycode_enters
+    name: vivo 换行两次暴露 send 元素
+  -
+    method: click
+    element: cn.missevan:id/send
+  -
+    method: back_press
+    name: 返回键
+  -
+    method: get_text
+    element: cn.missevan:id/danmu_edit
+    assert_text: 测试
+    is_not_exist: True
+  -
+    method: back_press
+  -
+    method: click
+    element: cn.missevan:id/avatar
+    name: 打开主播名片
+  -
+    method: _find_element
+    element: cn.missevan:id/user_avatar
+  -
+    method: back_press
+  -
+    method: click
+    element: cn.missevan:id/room_intro
+    name: 打开直播间简介
+  -
+    method: get_text
+    element: cn.missevan:id/room_intro_dialog
+    assert_text: 勿送礼
+  -
+    method: click
+    element: cn.missevan:id/room_intro
+    name: 关闭直播间简介
+  -
+    method: click
+    element: cn.missevan:id/room_metal
+    name: 打开超粉半窗
+  -
+    method: _find_element
+    element: cn.missevan:id/tvOpenSuperFans
+  -
+    method: click
+    element: cn.missevan:id/room_metal
+  -
+    method: click
+    element: cn.missevan:id/nobleLayout
+    name: 打开贵宾榜
+  -
+    method: _find_element
+    element: cn.missevan:id/item_noble_userinfo_name
+  -
+    method: click
+    element: cn.missevan:id/nobleLayout
+  -
+    method: click
+    element: cn.missevan:id/avatar_level1
+    name: 打开本场榜
+  -
+    method: _find_element
+    element: cn.missevan:id/rv_container
+    name: 检查本场榜
+  -
+    method: free_swipe
+    element:
+      - 0.9
+      - 0.1
+      - 0.8
+      - 0.8
+  -
+    method: _find_element
+    element: cn.missevan:id/rv_container
+    name: 检查本周榜
+  -
+    method: free_swipe
+    element:
+      - 0.9
+      - 0.1
+      - 0.8
+      - 0.8
+  -
+    method: _find_element
+    element: cn.missevan:id/clGoRank
+    name: 检查超粉榜
+  -
+    method: click
+    element: cn.missevan:id/avatar_level1
+  -
+    method: click
+    element: cn.missevan:id/ll_revenue
+  -
+    method: _find_element
+    element: cn.missevan:id/bg_live_level1
+  -
+    method: click
+    element: cn.missevan:id/ll_revenue
+  -
+    method: click
+    element: cn.missevan:id/send_gift
+  -
+    method: _find_element
+    element: cn.missevan:id/txt_gift_intro
+  -
+    method: click
+    element: cn.missevan:id/item_gift_img
+    index: 7
+    name: 点击当前页面第七个礼物
+  -
+    method: click
+    element: cn.missevan:id/gift_send
+  -
+    method: get_text
+    element: cn.missevan:id/tv_gift_name
+    assert_text: 送出
+  -
+    method: click
+    element: cn.missevan:id/avatar
+  -
+    method: click
+    element: cn.missevan:id/action_more
+  -
+    method: click
+    element: cn.missevan:id/tvAction
+    index: 2
+  -
+    method: click
+    element: cn.missevan:id/ask
+  -
+    method: set_text
+    element: cn.missevan:id/question_content
+    text: 这是一个测试提问/这是一个测试提问/这是一个测试提问/这是一个测试提问/这是一个测试提问
+  -
+    method: back_press
+  -
+    method: click
+    element: cn.missevan:id/ask_immediate
+  -
+    method: _find_element
+    element: cn.missevan:id/tvNumsAndCost
+  -
+    method: back_press
+  -
+    method: click
+    element: cn.missevan:id/confirm
+  -
+    method: click
+    element: cn.missevan:id/card_status
+  -
+    method: click
+    element: cn.missevan:id/card_live_center
+    name: 进入直播中心
+  -
+    method: click
+    element: cn.missevan:id/fans_badge
+  -
+    method: click
+    element: cn.missevan:id/tv_operate
+  -
+    method: click
+    element: cn.missevan:id/tv_confirm
+  -
+    method: get_text
+    element: cn.missevan:id/tv_operate
+    text: 佩戴
+  -
+    method: click
+    element: cn.missevan:id/tv_operate
+  -
+    method: get_text
+    element: cn.missevan:id/tv_operate
+    text: 卸下
+  -
+    method: back_press
+  -
+    method: back_press
